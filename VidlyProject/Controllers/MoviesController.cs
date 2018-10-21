@@ -12,26 +12,25 @@ namespace VidlyProject.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
-        public ActionResult Random()
+        public ActionResult Index()
         {
-            var movie = new Movie() {Name = "Interstellar", Id = 1};
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Nikola"},
-                new Customer {Name = "Koce"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-
-            };
-            return View(viewModel);
+            var movie = GetMovies();
+           
+            return View(movie);
             //return Content("Hello World!");
             //return HttpNotFound(); 
             //return new EmptyResult();
             //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name"});
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie {Name = "Interstellar", Id = 1},
+                new Movie {Name = "Deadpool", Id = 2}
+            };
+
         }
 
         public ActionResult Edit(int id)
@@ -40,16 +39,7 @@ namespace VidlyProject.Controllers
         }
 
         // called when we navigate to /movies
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
-
-            if (String.IsNullOrWhiteSpace(sortBy))
-                sortBy = "Name";
-
-            return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
-        }
+        
 
         [Route("movies/released/{year:regex(\\d{4}):range(1800, 2019)}/{month:regex(\\d{2}):range(1, 12)}")]
         public ActionResult ByReleaseDate(int year, int month)
