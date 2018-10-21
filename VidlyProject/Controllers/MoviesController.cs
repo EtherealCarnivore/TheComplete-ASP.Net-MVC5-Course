@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Owin.Security.Provider;
 using VidlyProject.Models;
+using VidlyProject.ViewModels;
 
 namespace VidlyProject.Controllers
 {
@@ -13,13 +14,20 @@ namespace VidlyProject.Controllers
         // GET: Movies
         public ActionResult Random()
         {
-            var movie = new Movie()
-                {
-                    Name = "Interstellar",
-                    Id = 1
-                };
+            var movie = new Movie() {Name = "Interstellar", Id = 1};
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "Nikola"},
+                new Customer {Name = "Koce"}
+            };
 
-            return View(movie);
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+
+            };
+            return View(viewModel);
             //return Content("Hello World!");
             //return HttpNotFound(); 
             //return new EmptyResult();
@@ -43,7 +51,7 @@ namespace VidlyProject.Controllers
             return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
+        [Route("movies/released/{year:regex(\\d{4}):range(1800, 2019)}/{month:regex(\\d{2}):range(1, 12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
