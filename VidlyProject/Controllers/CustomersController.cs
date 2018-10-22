@@ -12,19 +12,33 @@ namespace VidlyProject.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = GetCustomers();
+            var customers = new List<Customer>{
+                new Customer {Id = 1, Name = "Nikola Kanev"},
+                new Customer {Id = 2, Name = "Konstantin Genov"}
+
+            };
            
             return View(customers);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("Index", "Customers");
+            }
+            if (id == 0)
+            {
+                return RedirectToAction("Index", "Customers");
+            }
             var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+           
             if (customer == null)
             {
                 return HttpNotFound();
             }
 
+            
             return View(customer);
 
         }
