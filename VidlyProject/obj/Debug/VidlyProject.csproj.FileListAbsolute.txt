@@ -123,3 +123,4 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyPr
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddIsSubscribedToCustomer.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddMembershipType.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.PopulateMembershipTypes.resources
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.ApplyAnnotationsToCustomerName.resources
