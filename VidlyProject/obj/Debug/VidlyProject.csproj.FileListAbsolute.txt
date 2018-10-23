@@ -118,3 +118,5 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyPr
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.csproj.CopyComplete
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.dll
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.pdb
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.InitialModel.resources
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.csproj.GenerateResource.cache
