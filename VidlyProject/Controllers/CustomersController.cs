@@ -23,11 +23,11 @@ namespace VidlyProject.Controllers
 
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            if (id == null) // if there's no id in details there will be a redirection
             {
                 return RedirectToAction("Index", "Customers");
             }
-            if (id == 0)
+            if (id == 0) //same as above but with 0 value of id
             {
                 return RedirectToAction("Index", "Customers");
             }
