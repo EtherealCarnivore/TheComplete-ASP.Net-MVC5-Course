@@ -11,5 +11,6 @@ namespace VidlyProject.Models
         public string Name { get; set; }
         public bool IsSubsribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
+        public byte MembershipTypeId { get; set; }
     }
 }
