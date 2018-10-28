@@ -12,7 +12,7 @@ namespace VidlyProject.Migrations
                 c => new
                     {
                         Id = c.Byte(nullable: false),
-                        SignUpFree = c.Short(nullable: false),
+                        SignUpFee = c.Short(nullable: false),
                         DurationInMonths = c.Byte(nullable: false),
                         DiscountRate = c.Byte(nullable: false),
                     })
