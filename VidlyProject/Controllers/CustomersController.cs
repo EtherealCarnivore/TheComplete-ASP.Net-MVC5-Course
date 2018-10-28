@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity; //we need to add this in order to access the membershiptype property outside of the class
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,11 +13,11 @@ namespace VidlyProject.Controllers
         // GET: Customers
 
 
-        private ApplicationDbContext _context;
+        private ApplicationDbContext _context; //this way we access the database
 
-        public CustomersController()
+        public CustomersController() 
         {
-            _context = new ApplicationDbContext();
+            _context = new ApplicationDbContext(); //intialize the context variable
         }
 
         protected override void Dispose(bool disposing)
@@ -25,9 +26,9 @@ namespace VidlyProject.Controllers
         }
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //in order for the view to work we need to cast it ToList
 
-            return View(customers);
+            return View(customers);                                                   //we use the Include method + the lamba expression to show the info
         }
 
         public ActionResult Details(int? id)
