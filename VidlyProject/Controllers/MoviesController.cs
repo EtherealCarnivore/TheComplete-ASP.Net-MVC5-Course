@@ -6,32 +6,49 @@ using System.Web.Mvc;
 using Microsoft.Owin.Security.Provider;
 using VidlyProject.Models;
 using VidlyProject.ViewModels;
+using VidlyProject;
+using System.Data.Entity;
 
 namespace VidlyProject.Controllers
 {
     public class MoviesController : Controller
     {
         // GET: Movies
+
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposable)
+        {
+            _context.Dispose();
+        }
         public ActionResult Index()
         {
-            var movie = GetMovies();
+            var movie = _context.Movies.Include(m => m.Genre).ToList();
            
             return View(movie);
-            //return Content("Hello World!");
-            //return HttpNotFound(); 
-            //return new EmptyResult();
-            //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name"});
+       
         }
 
-        private IEnumerable<Movie> GetMovies()
+        public ActionResult Details(int id)
         {
-            return new List<Movie>
+            var movie = _context.Movies.Include(m => m.Genre)
+                .SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
             {
-                new Movie {Name = "Interstellar", Id = 1},
-                new Movie {Name = "Deadpool", Id = 2}
-            };
+                return HttpNotFound();
+            }
+
+            return View(movie);
 
         }
+
+       
 
         public ActionResult Edit(int id)
         {
