@@ -24,6 +24,12 @@ namespace VidlyProject.Controllers
         {
             _context.Dispose();
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //in order for the view to work we need to cast it ToList
