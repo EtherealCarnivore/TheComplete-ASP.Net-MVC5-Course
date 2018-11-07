@@ -26,14 +26,18 @@ namespace VidlyProject.Controllers
             _context.Dispose();
         }
 
-        // This action will create a new view where a form will be used for a new customer
+        // Dropdownlist - we get the list of membership types from the database and pass it into a view "New"
         public ActionResult New()
         {
-            var membershipTypes = _context.MembershipTypes.ToList();
+            var membershipTypes = _context.MembershipTypes.ToList(); // in order to access this we need to add a
+                                                                     // new DBSet in the IdendityModels
 
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new NewCustomerViewModel //create a model to encapsulate
+                                                     //all changes done to the customer class later we do this by creating
+                                                     //a new viewmodel called NewCustomerViewModel 
+
             {
-                MembershipTypes = membershipTypes
+                MembershipTypes = membershipTypes 
             };
             return View(viewModel);
         }

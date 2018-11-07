@@ -25,7 +25,8 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.MembershipTypeId)
-        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"),
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, 
+            new SelectList(Model.MembershipTypes, "Id", "Name"), //this type in ASP.NET initializes the dropdownlist, add the 2 properties id and name so they can be rendered
             "Select Membership Type",
             new { @class = "form-control" })
     </div>
