@@ -32,14 +32,14 @@ namespace VidlyProject.Controllers
             var membershipTypes = _context.MembershipTypes.ToList(); // in order to access this we need to add a
                                                                      // new DBSet in the IdendityModels
 
-            var viewModel = new NewCustomerViewModel //create a model to encapsulate
+            var viewModel = new CustomerFormViewModel //create a model to encapsulate
                                                      //all changes done to the customer class later we do this by creating
                                                      //a new viewmodel called NewCustomerViewModel 
 
             {
                 MembershipTypes = membershipTypes 
             };
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost] // this attribute makes sure that the action can only be called by POST and not GET
@@ -78,11 +78,29 @@ namespace VidlyProject.Controllers
             {
                 return HttpNotFound();
             }
-
-
             return View(customer);
 
         }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null) 
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
+
+        }
+
 
        
     }
