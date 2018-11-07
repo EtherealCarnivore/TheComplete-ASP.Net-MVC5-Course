@@ -43,11 +43,24 @@ namespace VidlyProject.Controllers
         }
 
         [HttpPost] // this attribute makes sure that the action can only be called by POST and not GET
-        public ActionResult Create(Customer customer) //bind model to request data
+        public ActionResult Save(Customer customer) //bind model to request data
         {
-            _context.Customers.Add(customer);
-            _context.SaveChanges(); //this will save the new customers, it will generate SQL statements
-                                    //at runtime and then it will run them on the DB
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubsribedToNewsLetter = customer.IsSubsribedToNewsLetter;
+            }
+            
+            _context.SaveChanges(); //saves the changes to the DB via SQL statements
+
             return RedirectToAction("Index", "Customers"); //redirect user back
         }
 
