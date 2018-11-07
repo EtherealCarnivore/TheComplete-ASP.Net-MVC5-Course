@@ -8,6 +8,7 @@ namespace VidlyProject.Models
 {
     public class MembershipType
     {
+        //set string not not nullable
         [Required]
         public string Name { get; set; }
         public byte Id { get; set; }

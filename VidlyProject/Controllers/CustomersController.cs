@@ -26,6 +26,7 @@ namespace VidlyProject.Controllers
             _context.Dispose();
         }
 
+        // This action will create a new view where a form will be used for a new customer
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -57,6 +58,7 @@ namespace VidlyProject.Controllers
             var customer = _context.Customers
                 .Include(c => c.MembershipType)
                 .SingleOrDefault(c => c.Id == id);
+            // we need this LINQ and lambda expressions in order to render the customer in a view
 
             if (customer == null)
             {

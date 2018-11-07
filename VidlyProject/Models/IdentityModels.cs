@@ -20,6 +20,8 @@ namespace VidlyProject.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        // with this DbSet we populate the database with our classes, we run a add-migration to the DB 
        public DbSet<Customer> Customers { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
