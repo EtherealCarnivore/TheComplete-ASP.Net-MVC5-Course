@@ -42,6 +42,16 @@ namespace VidlyProject.Controllers
             return View(viewModel);
         }
 
+        [HttpPost] // this attribute makes sure that the action can only be called by POST and not GET
+        public ActionResult Create(Customer customer) //bind model to request data
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges(); //this will save the new customers, it will generate SQL statements
+                                    //at runtime and then it will run them on the DB
+            return RedirectToAction("Index", "Customers"); //redirect user back
+        }
+
+
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //in order for the view to work we need to cast it ToList
