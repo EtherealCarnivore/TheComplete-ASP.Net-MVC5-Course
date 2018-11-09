@@ -19,7 +19,7 @@ namespace VidlyProject.ViewModels
             {
                 if (Movie != null && Movie.Id != 0)
                 {
-                    return "Edit Movie";
+                    return " ";
                 }
                 else
                 {

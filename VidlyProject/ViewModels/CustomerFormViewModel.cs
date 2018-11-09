@@ -13,5 +13,20 @@ namespace VidlyProject.ViewModels
                                                                          //of the list class, we need to initirate over membershiptypes 
                                                                          //this is why I am using this ienumerable class
         public Customer Customer { get; set; }
+
+        public string Title // I use this logic to handle the title of the Movie Form in the view
+        {
+            get
+            {
+                if (Customer != null && Customer.Id != 0)
+                {
+                    return " ";
+                }
+                else
+                {
+                    return "New Customer";
+                }
+            }
+        }
     }
 }

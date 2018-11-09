@@ -5,8 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Title</h2>
-
+@if (@Model.Title == " ")
+{
+    <h2>Editing @Model.Movie.Name</h2>
+}
 
 @using (Html.BeginForm("Save", "Movies"))
 {
