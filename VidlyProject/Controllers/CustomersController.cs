@@ -45,6 +45,17 @@ namespace VidlyProject.Controllers
         [HttpPost] // this attribute makes sure that the action can only be called by POST and not GET
         public ActionResult Save(Customer customer) //bind model to request data
         {
+            if (!ModelState.IsValid) //change the flow of the program, if not valid return same view
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer, //this is required to populate the values in the form
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
+
+            
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
