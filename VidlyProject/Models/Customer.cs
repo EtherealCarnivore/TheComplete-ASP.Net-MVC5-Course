@@ -11,7 +11,7 @@ namespace VidlyProject.Models
         public int Id { get; set; }
 
         // this sets the string to not nullable in the db and it's maximum length 
-        [Required]
+        [Required(ErrorMessage = "Please enter the customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }
 
