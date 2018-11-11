@@ -45,6 +45,7 @@ namespace VidlyProject.Controllers
         }
 
         [HttpPost] // this attribute makes sure that the action can only be called by POST and not GET
+        [ValidateAntiForgeryToken] //validate token to prevent CSRF attacks
         public ActionResult Save(Customer customer) //bind model to request data
         {
             if (!ModelState.IsValid) //change the flow of the program, if not valid return same view

@@ -16,7 +16,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Customer.Name, null, new { @class = "text-danger" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
 
 
@@ -43,6 +43,7 @@
         </label>
     </div>
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }
 
