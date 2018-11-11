@@ -36,6 +36,7 @@ namespace VidlyProject.Controllers
 
         public ActionResult New()
         {
+
             var genreTypes = _context.Genres.ToList();
 
             var viewModel = new MovieFormViewModel
@@ -47,8 +48,20 @@ namespace VidlyProject.Controllers
         }
 
         [HttpPost] // this attribute makes sure that the action can only be called by POST and not GET
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie) //bind model to request data
         {
+            if (!ModelState.IsValid) //change the flow of the program, if not valid return same view
+            {
+                var viewModel = new MovieFormViewModel()
+                {
+                    Movie = movie, //this is required to populate the values in the form
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MovieForm", viewModel);
+            }
+
+
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;

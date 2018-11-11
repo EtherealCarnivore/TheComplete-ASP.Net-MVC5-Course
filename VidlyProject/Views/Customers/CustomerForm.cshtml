@@ -9,10 +9,14 @@
 {
     <h2>Editing @Model.Customer.Name</h2>
 }
+else
+{
+    <h2>New Customer</h2>
+}
 
 @using (@Html.BeginForm("Save", "Customers"))
 {
-    @Html.ValidationSummary(true, "Please fill in the fields below.")
+    @Html.ValidationSummary(true, "Please fill in the required fields below.")
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
