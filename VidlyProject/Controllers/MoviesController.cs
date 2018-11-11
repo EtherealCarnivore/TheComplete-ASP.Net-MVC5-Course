@@ -41,7 +41,7 @@ namespace VidlyProject.Controllers
 
             var viewModel = new MovieFormViewModel
             {   
-                Movie = new Movie(),
+                
                 Genres = genreTypes
             };
             return View("MovieForm", viewModel);
@@ -53,9 +53,9 @@ namespace VidlyProject.Controllers
         {
             if (!ModelState.IsValid) //change the flow of the program, if not valid return same view
             {
-                var viewModel = new MovieFormViewModel()
+                var viewModel = new MovieFormViewModel(movie)
                 {
-                    Movie = movie, //this is required to populate the values in the form
+                     
                     Genres = _context.Genres.ToList()
                 };
                 return View("MovieForm", viewModel);
@@ -106,9 +106,9 @@ namespace VidlyProject.Controllers
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
             if (movie == null)
                 return HttpNotFound();
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
+                
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
