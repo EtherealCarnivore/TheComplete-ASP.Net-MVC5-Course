@@ -16,7 +16,8 @@ namespace VidlyProject.Models
             if (customer.MembershipTypeId == MembershipType.Unkown || 
                 customer.MembershipTypeId == MembershipType.PayAsYouGo) return ValidationResult.Success;
 
-            if (customer.Birthdate == null) return new ValidationResult("Birthdate is required");
+            if (customer.Birthdate == null) return new ValidationResult
+                ("The customer should be at least 18 years old to go on a membership plan.");
 
             var age = DateTime.Today.Year - customer.Birthdate.Value.Year;
 

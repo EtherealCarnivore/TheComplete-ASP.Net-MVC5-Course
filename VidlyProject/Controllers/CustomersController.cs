@@ -29,6 +29,7 @@ namespace VidlyProject.Controllers
         // Dropdownlist - we get the list of membership types from the database and pass it into a view "New"
         public ActionResult New()
         {
+
             var membershipTypes = _context.MembershipTypes.ToList(); // in order to access this we need to add a
                                                                      // new DBSet in the IdendityModels
 
@@ -37,6 +38,7 @@ namespace VidlyProject.Controllers
                                                      //a new viewmodel called NewCustomerViewModel 
 
             {
+                Customer = new Customer(), //we need this to initialize all the values in the customer form (remove ID warning)
                 MembershipTypes = membershipTypes 
             };
             return View("CustomerForm", viewModel);

@@ -28,5 +28,11 @@ textarea {
 }
 
 .input-validation-error{
-    border: 2px solid red;
+    border: 1px solid red;
+}
+
+.validation-summary-errors{
+    font-weight: bold;
+    color: red;
+     
 }

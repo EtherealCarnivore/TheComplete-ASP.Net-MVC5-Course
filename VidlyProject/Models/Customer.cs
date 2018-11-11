@@ -21,10 +21,12 @@ namespace VidlyProject.Models
 
         //adding the [Display] annotation allows us to render the properties with a display name
         [Display(Name = "Membership Type")]
+        [Required(ErrorMessage = "Please select a membership type.")]
         public byte MembershipTypeId { get; set; }
 
-        [Display(Name = "Date of Birth")]
+        
         [Min18YearsIfAMember] //validate if customer has 18
+        [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
 
 
