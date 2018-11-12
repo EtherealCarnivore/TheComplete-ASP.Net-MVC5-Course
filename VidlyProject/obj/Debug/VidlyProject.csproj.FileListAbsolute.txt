@@ -129,3 +129,9 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyPr
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddBirthday.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.TestMovie.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.PopulateGenres.resources
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Net.Http.Formatting.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Web.Http.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Web.Http.WebHost.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Net.Http.Formatting.xml
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Web.Http.xml
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Web.Http.WebHost.xml

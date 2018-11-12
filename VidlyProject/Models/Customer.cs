@@ -28,7 +28,5 @@ namespace VidlyProject.Models
         [Min18YearsIfAMember] //validate if customer has 18
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
-
-
     }
 }
