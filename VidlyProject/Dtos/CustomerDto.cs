@@ -19,7 +19,7 @@ namespace VidlyProject.Dtos
 
         public byte MembershipTypeId { get; set; }
 
-        [Min18YearsIfAMember]
+        //[Min18YearsIfAMember] we have 2 end points of creating customer so we would get an error
         public DateTime? Birthdate { get; set; }
     }
 }
