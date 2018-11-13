@@ -81,9 +81,8 @@ namespace VidlyProject.Controllers
 
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //in order for the view to work we need to cast it ToList
 
-            return View(customers);                                                   //we use the Include method + the lamba expression to show the info
+            return View();                                                   //we use the Include method + the lamba expression to show the info
         }
 
         public ActionResult Details(int? id)
