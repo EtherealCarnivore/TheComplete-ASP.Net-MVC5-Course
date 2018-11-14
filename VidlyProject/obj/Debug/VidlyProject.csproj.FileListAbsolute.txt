@@ -137,3 +137,4 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Web.Ht
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\System.Web.Http.WebHost.xml
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\AutoMapper.dll
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\AutoMapper.xml
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.SeedUsers.resources
