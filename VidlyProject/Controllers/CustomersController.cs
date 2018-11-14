@@ -82,7 +82,7 @@ namespace VidlyProject.Controllers
         public ActionResult Index()
         {
 
-            return View();                                                   //we use the Include method + the lamba expression to show the info
+            return View();                    
         }
 
         public ActionResult Details(int? id)

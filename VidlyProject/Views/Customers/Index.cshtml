@@ -12,23 +12,20 @@
 </p>
 <table id="customers" class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Current customers</th>
-        <th>Membership type</th>
-        <th>Delete</th>
-
-    </tr>
+        <tr>
+            <th>Current customers</th>
+            <th>Membership type</th>
+            <th>Delete</th>
+        </tr>
     </thead>
-    <tbody>
-       
-    </tbody>
+    <tbody></tbody>
 </table>
 
 @section scripts
-{ 
+{
     <script>
         $(document).ready(function() {
-            $("#customers").DataTable({
+           var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -41,7 +38,7 @@
                         }
                     },
                     {
-                        data:"name"
+                        data:"membershipType.name"
                     },
                     {
                         data: "id",
@@ -50,9 +47,9 @@
                         }
                     }
                 ]
-               
+
             });
-            
+
             $("#customers").on("click", ".js-delete",
                 function() {
                     var button = $(this);
@@ -63,13 +60,13 @@
                                 $.ajax({
                                     url: "/api/customers/" + button.attr("data-customer-id"),
                                     method: "DELETE",
-                                    success: function() {
-                                        button.parents("tr").remove();
+                                    success: function () {
+                                        table.row(button.parents("tr")).remove().draw();
                                     }
                                 });
                             };
 
-                        });                     
+                        });
                 });
         });
     </script>
