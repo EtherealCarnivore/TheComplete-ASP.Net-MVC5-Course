@@ -26,7 +26,8 @@ namespace VidlyProject.Controllers
             _context.Dispose();
         }
 
-        // Dropdownlist - we get the list of membership types from the database and pass it into a view "New"
+
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
 
@@ -81,8 +82,13 @@ namespace VidlyProject.Controllers
 
         public ActionResult Index()
         {
+            if (User.IsInRole(RoleName.CanManageMovies)) //this gives us access to the current user
+            {
+                return View("List"); //here the admin has access update movies
+            }
+            return View("ReadOnlyList"); //readonly
 
-            return View();                    
+                         
         }
 
         public ActionResult Details(int? id)

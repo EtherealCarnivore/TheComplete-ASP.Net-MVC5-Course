@@ -87,9 +87,18 @@ namespace VidlyProject.Controllers
 
 
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            var movie = _context.Movies.Include(m => m.Genre)
+            if (id == null) // if there's no id in details there will be a redirection
+            {
+                return RedirectToAction("Index", "Movies");
+            }
+            if (id == 0) //same as above but with 0 value of id
+            {
+                return RedirectToAction("Index", "Movies");
+            }
+            var movie = _context.Movies
+                .Include(m => m.Genre)
                 .SingleOrDefault(m => m.Id == id);
 
             if (movie == null)
