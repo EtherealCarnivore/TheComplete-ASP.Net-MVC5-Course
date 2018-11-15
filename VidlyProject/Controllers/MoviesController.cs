@@ -26,16 +26,19 @@ namespace VidlyProject.Controllers
         {
             _context.Dispose();
         }
-        public ActionResult Index()
+        public ViewResult Index()
         {
-        
-            return View();
-       
+            if (User.IsInRole(RoleName.CanManageMovies)) //this gives us access to the current user
+            {
+                return View("List"); //here the admin has access update movies
+            }
+            return View("ReadOnlyList"); //readonly
+
         }
 
-        public ActionResult New()
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public ViewResult New()
         {
-
             var genreTypes = _context.Genres.ToList();
 
             var viewModel = new MovieFormViewModel
@@ -99,7 +102,7 @@ namespace VidlyProject.Controllers
         }
 
 
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int? id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
