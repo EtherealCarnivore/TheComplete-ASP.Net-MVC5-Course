@@ -140,3 +140,8 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\AutoMapper.xm
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.SeedUsers.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddDrivingLicenseToApplicationUser.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddPhoneNumberToRegister.resources
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.Ado.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.AspNet.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.Core.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.EF6.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.Mvc5.dll
