@@ -36,7 +36,7 @@ namespace VidlyProject.Controllers.Api
                         return BadRequest("Movie is not available.");
 
                     movie.NumberAvailable--;
-                    movie.NumberInStock--;
+                    movie.NumberInStock = movie.NumberAvailable;
 
                     var rental = new Rental
                     {
