@@ -145,3 +145,5 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.AspNe
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.Core.dll
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.EF6.dll
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.Mvc5.dll
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddRentalClassToApplication.resources
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddedNewPropetyToMovie.resources

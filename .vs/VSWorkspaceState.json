@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\VidlyProject",
+    "\\VidlyProject\\Controllers",
+    "\\VidlyProject\\Controllers\\Api",
+    "\\VidlyProject\\Dtos"
   ],
+  "SelectedNode": "\\VidlyProject\\Dtos\\GenreDto.cs",
   "PreviewInSolutionExplorer": false
 }

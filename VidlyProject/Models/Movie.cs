@@ -36,5 +36,7 @@ namespace VidlyProject.Models
         [Display(Name = "Numbers in stock")]
         public byte NumberInStock { get; set; }
 
+        public byte NumberAvailable { get; set; }
+
     }
 }
