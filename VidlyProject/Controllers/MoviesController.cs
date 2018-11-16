@@ -42,8 +42,8 @@ namespace VidlyProject.Controllers
             var genreTypes = _context.Genres.ToList();
 
             var viewModel = new MovieFormViewModel
-            {   
-                
+            {
+
                 Genres = genreTypes
             };
             return View("MovieForm", viewModel);
@@ -57,8 +57,9 @@ namespace VidlyProject.Controllers
             {
                 var viewModel = new MovieFormViewModel(movie)
                 {
-                     
-                    Genres = _context.Genres.ToList()
+
+                    Genres = _context.Genres.ToList(),
+                    
                 };
                 return View("MovieForm", viewModel);
             }
@@ -77,7 +78,7 @@ namespace VidlyProject.Controllers
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
-              
+
             }
 
             _context.SaveChanges(); //saves the changes to the DB via SQL statements
@@ -119,13 +120,13 @@ namespace VidlyProject.Controllers
                 return HttpNotFound();
             var viewModel = new MovieFormViewModel(movie)
             {
-                
+
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
         }
 
 
-        
+
     }
 }

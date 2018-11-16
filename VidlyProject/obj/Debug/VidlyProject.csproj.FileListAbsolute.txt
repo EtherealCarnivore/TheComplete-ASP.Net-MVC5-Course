@@ -147,3 +147,4 @@ D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.EF6.d
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\bin\Glimpse.Mvc5.dll
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddRentalClassToApplication.resources
 D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.AddedNewPropetyToMovie.resources
+D:\Git Repository\TheComplete-ASP.Net-MVC5-Course\VidlyProject\obj\Debug\VidlyProject.Migrations.TestingPls.resources
