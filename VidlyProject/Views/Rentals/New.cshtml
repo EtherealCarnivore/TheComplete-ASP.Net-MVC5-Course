@@ -98,7 +98,7 @@
                         validator.resetForm();
                     })
                     .fail(function () {
-                        toastr.error("Something unexpected happened.");
+                        toastr.error("One or more of the movies you are trying to rent are out of stock.");
                     });
                     return false;
                 }

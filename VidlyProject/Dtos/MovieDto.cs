@@ -25,5 +25,5 @@ namespace VidlyProject.Dtos
 
     public byte NumberInStock { get; set; }
 
-}
+    }
 }
